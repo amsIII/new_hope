@@ -1,0 +1,38 @@
+---
+import HeaderNav from "./HeaderNav.astro";
+---
+
+<header class="header">
+  <!-- TODO: conditional rendering? -->
+  <HeaderNav />
+</header>
+
+<style lang="scss">
+  @use "../../styles/abstracts/" as *;
+
+  .header {
+    width: 100%;
+    position: sticky;
+    z-index: 1;
+    background-color: lighten($color: map-get($gmk9009, beige), $amount: 15%);
+  }
+</style>
+
+<!-- NOTE: Mobile nav open/close functionality -->
+<script>
+  const Header = document.querySelector(".header");
+  const HeaderNav = document.querySelector(".header_nav");
+  const navToggle = document.querySelector(".header_nav-toggle");
+  const hamburger = document.querySelector(".hamburger");
+  const close = document.querySelector(".close");
+
+  navToggle.addEventListener("click", () => {
+    HeaderNav.hasAttribute("data-visible")
+      ? navToggle.setAttribute("aria-expanded", false)
+      : navToggle.setAttribute("aria-expanded", true);
+    HeaderNav.toggleAttribute("data-visible");
+    close.toggleAttribute("data-visible");
+    hamburger.toggleAttribute("data-invisible");
+    // primaryHeader.toggleAttribute("data-overlay");
+  });
+</script>

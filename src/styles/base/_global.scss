@@ -1,0 +1,76 @@
+@use "../abstracts/" as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+  transition: font-size 0.3s ease-in-out;
+}
+
+body {
+  // padding-top: 60px;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  color: map-get($gmk9009, black);
+  background-color: lighten($color: map-get($gmk9009, beige), $amount: 10%);
+}
+
+i.fa-solid {
+  color: map-get($colors, bw, 700);
+}
+
+h1 {
+  font-weight: 900;
+  @include font-size(
+    $breakpoints,
+    map-get($fsms-px-scale, xxxl),
+    $fs-hrz-ratio
+  );
+}
+h2 {
+  @include font-size($breakpoints, map-get($fsms-px-scale, xxl), $fs-hrz-ratio);
+}
+h3 {
+  @include font-size($breakpoints, map-get($fsms-px-scale, xl), $fs-hrz-ratio);
+}
+h4 {
+  @include font-size($breakpoints, map-get($fsms-px-scale, lg), $fs-hrz-ratio);
+}
+h5 {
+  @include font-size($breakpoints, map-get($fsms-px-scale, md), $fs-hrz-ratio);
+}
+h6 {
+  @include font-size(
+    $breakpoints,
+    map-get($fsms-px-scale, base),
+    $fs-hrz-ratio
+  );
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  background-color: orchid;
+  padding-top: 60px;
+  /* w/o min-hieght footer is pushed out of viewport */
+  min-height: calc(100vh - 2rem);
+}

@@ -1,0 +1,27 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header/Header.astro";
+
+export interface Props {
+  pageTitle: string;
+}
+
+const { pageTitle } = Astro.props;
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} | ${pageTitle}`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <style is:global></style>
+  </body>
+</html>
