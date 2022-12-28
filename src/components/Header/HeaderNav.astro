@@ -64,11 +64,15 @@ const navListItems = [
     display: flex;
     gap: clamp(1rem, 5vw, 2rem);
 
-    @include font-size(
-      $breakpoints,
-      map-get($fsmt-px-scale, sm),
-      $fs-hrz-ratio
-    );
+    .header_nav_link {
+      font-weight: 600;
+
+      @include font-size(
+        $breakpoints,
+        map-get($fsmt-px-scale, sm),
+        $fs-hrz-ratio
+      );
+    }
   }
 
   // NOTE: accessability hidden
@@ -86,7 +90,8 @@ const navListItems = [
 
   .header_nav_link[aria-current="page"],
   .header_nav_link:active {
-    color: darken($color: map-get($gmk9009, green), $amount: 25%);
+    color: darken($color: map-get($gmk9009, beige), $amount: 25%);
+    font-weight: 800;
     position: relative;
   }
 
@@ -96,7 +101,7 @@ const navListItems = [
       // padding: 0.5rem;
     }
 
-    .mobile-nav-toggle {
+    .header_nav-toggle {
       display: block;
       z-index: 1001;
       cursor: pointer;
@@ -155,7 +160,6 @@ const navListItems = [
       text-align: center;
       font-weight: 600;
       font-size: 1.4rem;
-
       @media screen and (max-width: map-get($breakpoints, mobile-sm)) {
         font-size: 1.2rem;
       }
@@ -169,8 +173,8 @@ const navListItems = [
       }
     }
 
-    .nav-link[aria-current="page"],
-    .nav-link:active {
+    .header_nav_link[aria-current="page"],
+    .header_nav_link:active {
       color: darken($color: map-get($gmk9009, green), $amount: 10%);
       position: relative;
     }
