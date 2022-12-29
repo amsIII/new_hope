@@ -50,26 +50,26 @@
         font-size: toRem($fs-base * math.pow($ratio, 2));
         @content;
       }
-    } @else if ($fs-breakpoint == "tablet-md") {
-      @media screen and (min-width: $mq-width) {
-        font-size: toRem($fs-base * math.pow($ratio, 3));
-        @content;
-      }
-    } @else if ($fs-breakpoint == "desktop-sm") {
-      @media screen and (min-width: $mq-width) {
-        font-size: toRem($fs-base * math.pow($ratio, 4));
-        @content;
-      }
-    } @else if ($fs-breakpoint == "desktop-md") {
-      @media screen and (min-width: $mq-width) {
-        font-size: toRem($fs-base * math.pow($ratio, 5));
-        @content;
-      }
-    } @else if ($fs-breakpoint == "desktop-lg") {
-      @media screen and (min-width: $mq-width) {
-        font-size: toRem($fs-base * math.pow($ratio, 6));
-        @content;
-      }
+      // } @else if ($fs-breakpoint == "tablet-md") {
+      //   @media screen and (min-width: $mq-width) {
+      //     font-size: toRem($fs-base * math.pow($ratio, 3));
+      //     @content;
+      //   }
+      // } @else if ($fs-breakpoint == "desktop-sm") {
+      //   @media screen and (min-width: $mq-width) {
+      //     font-size: toRem($fs-base * math.pow($ratio, 4));
+      //     @content;
+      //   }
+      // } @else if ($fs-breakpoint == "desktop-md") {
+      //   @media screen and (min-width: $mq-width) {
+      //     font-size: toRem($fs-base * math.pow($ratio, 5));
+      //     @content;
+      //   }
+      // } @else if ($fs-breakpoint == "desktop-lg") {
+      //   @media screen and (min-width: $mq-width) {
+      //     font-size: toRem($fs-base * math.pow($ratio, 6));
+      //     @content;
+      //   }
     }
   }
 }

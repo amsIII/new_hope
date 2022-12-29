@@ -12,7 +12,10 @@ const navListItems = [
 
 <section class="nav-container">
   <!-- NOTE: LOGO -->
-  <h2><HeaderLink class="logo" href="/">New Hope</HeaderLink></h2>
+  <HeaderLink class="logo" href="/">
+    <img src="/NHC logo nornbw.svg" alt="Logo" />
+    <span class="visually-hidden">Home</span>
+  </HeaderLink>
 
   <!-- NOTE: HAMBURGER BUTTON -->
   <button
@@ -46,7 +49,7 @@ const navListItems = [
 
   .nav-container {
     margin: 0 auto;
-    height: 60px;
+    // height: 80px;
     max-width: 1920px;
     padding: 0 1rem;
     display: flex;
@@ -72,6 +75,13 @@ const navListItems = [
         map-get($fsmt-px-scale, sm),
         $fs-hrz-ratio
       );
+    }
+  }
+
+  .logo {
+    img {
+      width: 100%;
+      max-height: 100px;
     }
   }
 

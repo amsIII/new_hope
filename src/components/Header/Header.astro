@@ -28,8 +28,8 @@ import HeaderNav from "./HeaderNav.astro";
 
   navToggle.addEventListener("click", () => {
     HeaderNav.hasAttribute("data-visible")
-      ? navToggle.setAttribute("aria-expanded", false)
-      : navToggle.setAttribute("aria-expanded", true);
+      ? navToggle.setAttribute("aria-expanded", "false")
+      : navToggle.setAttribute("aria-expanded", "true");
     HeaderNav.toggleAttribute("data-visible");
     close.toggleAttribute("data-visible");
     hamburger.toggleAttribute("data-invisible");

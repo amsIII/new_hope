@@ -21,10 +21,33 @@
 @function vrtRatio($fs) {
   @return $fs * 1.2;
 }
-
 @function hrzRatio($fs) {
   @return $fs * 1.125;
 }
+
+// NOTE: font size at specified breakpoint
+// @function fsAtBreakpoint($breakpoint, $ratio) {
+//   $base-fs: 16;
+//   @if ($breakpoint == "mobile-sm") {
+//     @return toRem($base-fs);
+//   } @else if ($breakpoint == "mobile-md") {
+//     @return toRem($base-fs * $ratio);
+//   } @else if ($breakpoint == "mobile-md") {
+//     @return toRem($base-fs * math.pow($ratio, 2));
+//   } @else if ($breakpoint == "mobile-lg") {
+//     @return toRem($base-fs * math.pow($ratio, 3));
+//   } @else if ($breakpoint == "tablet-sm") {
+//     @return toRem($base-fs * math.pow($ratio, 4));
+//   } @else if ($breakpoint == "tablet-md") {
+//     @return toRem($base-fs * math.pow($ratio, 5));
+//   } @else if ($breakpoint == "desktop-sm") {
+//     @return toRem($base-fs * math.pow($ratio, 6));
+//   } @else if ($breakpoint == "desktop-md") {
+//     @return toRem($base-fs * math.pow($ratio, 7));
+//   } @else if ($breakpoint == "desktop-lg") {
+//     @return toRem($base-fs * math.pow($ratio, 8));
+//   }
+// }
 
 @function fsAtBreakpoint($breakpoint, $ratio) {
   $base-fs: 16;
