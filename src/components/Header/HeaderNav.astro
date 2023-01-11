@@ -3,10 +3,10 @@ import HeaderLink from "./HeaderLink.astro";
 // import Btn from "./PrimaryButton.astro";
 
 const navListItems = [
-  { name: "About", path: "/about" },
+  { name: "About us", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Blog", path: "/blog" },
-  { name: "Contact", path: "/contact" },
+  { name: "Contact us", path: "/contact" },
 ];
 ---
 
@@ -42,6 +42,11 @@ const navListItems = [
       }
     </ul>
   </nav>
+
+  <section class="social-icons">
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+  </section>
 </section>
 
 <style lang="scss">
@@ -57,6 +62,12 @@ const navListItems = [
     align-items: center;
     position: sticky;
     z-index: 2;
+
+    @include mqLargerThan(tablet-md) {
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+      place-items: center;
+    }
   }
 
   .header_nav-toggle {
@@ -79,9 +90,30 @@ const navListItems = [
   }
 
   .logo {
+    // background-color: aqua;
     img {
       width: 100%;
       max-height: 100px;
+    }
+  }
+
+  .social-icons {
+    height: 100%;
+    width: 100%;
+    // background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & > a {
+      padding: 0.5rem;
+      i {
+        font-size: 1.75rem;
+      }
+    }
+
+    @include mqSmallerThan(tablet-md) {
+      display: none;
     }
   }
 
@@ -170,6 +202,7 @@ const navListItems = [
       text-align: center;
       font-weight: 600;
       font-size: 1.4rem;
+
       @media screen and (max-width: map-get($breakpoints, mobile-sm)) {
         font-size: 1.2rem;
       }
